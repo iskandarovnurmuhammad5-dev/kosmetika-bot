@@ -12,6 +12,10 @@ load_dotenv()  # .env bo'lsa o'qiydi, bo'lmasa jim o'tadi (Railway'da env variab
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 ADMIN_ID = os.getenv("ADMIN_ID")  # Railway Variables'da ADMIN_ID bo'lishi shart
 
+print("DEBUG BOT_TOKEN exists:", bool(BOT_TOKEN))
+print("DEBUG ADMIN_ID raw:", repr(ADMIN_ID))
+print("DEBUG has ADMIN_ID key:", "ADMIN_ID" in os.environ)
+
 if not BOT_TOKEN:
     raise RuntimeError("BOT_TOKEN topilmadi. Railway Variables yoki .env ni tekshiring.")
 if not ADMIN_ID:
